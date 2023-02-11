@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']  # '.vercel.app'
 
+CSRF_TRUSTED_ORIGINS = ['https://vercel-production-8280.up.railway.app']
+
 
 # Application definition
 

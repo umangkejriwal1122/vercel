@@ -23,29 +23,6 @@ def about(request):
 def form(request):
     return render(request,'form/form.html')
 
-def insert(request):
-    name = request.POST['a1']
-    email = request.POST['a2']
-    mob = request.POST['a3']
-    conn = sql.connect(host="localhost",user="root",passwd="",database="django")
-    cursor = conn.cursor()
-    query = "insert into users(name,email,mobile)values('{}','{}','{}')".format(name,email,mob)
-    cursor.execute(query)
-    conn.commit()
-    return render(request,'form/form.html')
-
-def login(request):
-    email = request.POST['a2']
-    mob = request.POST['a3']
-    conn = sql.connect(host="localhost",user="root",passwd="",database="django")
-    cursor = conn.cursor()
-    query = "select * from users where email = '{}' and mobile = {}".format(email,mob)
-    cursor.execute(query)
-    d = cursor.fetchall()
-    data = {"mydata":d}
-    conn.commit()
-    return render(request,'about/about.html',data)
-
 def salary(request):
     # return HttpResponse("This is About Page")
    # a1 = request.GET.get('a1')

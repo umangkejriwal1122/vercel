@@ -13,7 +13,7 @@
         <h5> User Detail Form</h5>
         <form method="post" action="{% url 'mysalary' %}">
             {% csrf_token %}
-            <input type="text" placeholder="Enter Years" name="a1" required>
+            <input type="number" placeholder="Enter Years" name="a1" required>
             <input type="submit" value="Submit">
         </form>
     </center>

@@ -9,6 +9,6 @@ def homepage(request):
 def salary(request):
     a1 = request.POST['a1']
     reg = joblib.load("model/salary.pkl")
-    y_pred = reg.predict([[3.5]])
+    y_pred = reg.predict([[a1]])
     data = {"salary":y_pred}
     return render(request,'about/about.html',data)
